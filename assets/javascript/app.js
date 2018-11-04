@@ -1,17 +1,17 @@
 $(document).ready(function () {
 
-
+   
     //jumbotron scrolling effect//
-    var jumboHeight = $('.jumbotron').outerHeight();
+    //var jumboHeight = $('.jumbotron').outerHeight();
 
-    function parallax() {
-        var scrolled = $(window).scrollTop();
-        $('.bg').css('height', (jumboHeight - scrolled) + 'px');
-    }
+    //function parallax() {
+       // var scrolled = $(window).scrollTop();
+       // $('.bg').css('height', (jumboHeight - scrolled) + 'px');
+    //}
 
-    $(window).scroll(function (e) {
-        parallax();
-    });
+   // $(window).scroll(function (e) {
+       // parallax();
+   // });
 
 
     //start of global varibales//  
@@ -71,7 +71,7 @@ $(document).ready(function () {
             $(".answer").hide();
             $("#done-button").hide();
             $("#countdown").hide();
-            
+
         }
 
         function end() {
@@ -90,6 +90,8 @@ $(document).ready(function () {
             //resets the input radios so they aren't checked when page resets//
             $('input[type=radio]').prop('checked', false);
             $(".youwin").hide();
+            correct = 0;
+            missed = 0;
 
 
 
@@ -110,11 +112,11 @@ $(document).ready(function () {
 
     function check() {
 
-        var question1 = $("input[name='q1']").val();
-        var question2 = $("input[name='q2']").val();
-        var question3 = $("input[name='q3']").val();
-        var question4 = $("input[name='q4']").val();
-        var question5 = $("input[name='q5']").val();
+        var question1 = $("input[type='radio'][name='q1']:checked").val();
+        var question2 = $("input[type='radio'][name='q2']:checked").val();
+        var question3 = $("input[type='radio'][name='q3']:checked").val();
+        var question4 = $("input[type='radio'][name='q4']:checked").val();
+        var question5 = $("input[type='radio'][name='q5']:checked").val();
 
         console.log(question1);
         console.log(question2);
@@ -133,47 +135,42 @@ $(document).ready(function () {
         } else {
             missed++;
         }
-        
-        
 
 
-        if (question2 === "c"){
-        correct ++;
-        }
-        else {
-         missed ++;
-        }
-        if (question3 === "a"){
-         correct ++;
 
-        }
-         else {
-         missed ++;
-        }
-        if (question4 === "c"){
-         correct ++;
 
-         }
-        else {
-         missed ++;
+        if (question2 === "c") {
+            correct++;
+        } else {
+            missed++;
         }
-        if (question5 === "d"){
-         correct ++;
+        if (question3 === "a") {
+            correct++;
 
-         }
-        else {
-         missed ++;
+        } else {
+            missed++;
+        }
+        if (question4 === "c") {
+            correct++;
+
+        } else {
+            missed++;
+        }
+        if (question5 === "d") {
+            correct++;
+
+        } else {
+            missed++;
         }
 
         console.log(correct);
         console.log(missed);
         $(".answer-page").html("<h2>Answered Correctly: " +
-        correct + "<h2>Answered Incorrectly: " + missed);
+            correct + "<h2>Answered Incorrectly: " + missed);
 
-        if (correct === 5){
+        if (correct === 5) {
             $(".youwin").html("<h1>YOU WIN!!!! YOU GOT EVERY ANSWER RIGHT!!")
-        }
-        else{
+        } else {
 
         }
 
@@ -187,7 +184,7 @@ $(document).ready(function () {
 
     };
 
-    
+
 
 
 
