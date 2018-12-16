@@ -1,11 +1,12 @@
-# TriviaGame
+# Food Trivia Time!
 
+https://michaelsingarayar.github.io/TriviaGame/
 
 
 
 # Overview
 
-Created a Trivia game using JavaScript for the logic and jQuery to manipulate the DOM. 
+I created a Trivia game using JavaScript for the logic and jQuery to manipulate the DOM. You have 1 minute to answer 5 food realted questions. 
 
 
 # Languages/Technologies Used
